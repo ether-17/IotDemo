@@ -26,12 +26,16 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
+          npm prune --production
+
+      - name: Zip artifact for deployment
+        run: zip release.zip ./* -qr
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +57,4 @@ jobs:
           app-name: 'Iot-Demo0'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6A3429CB23D1431E8CE7B847B45CC82A }}
-          package: .
+          package: release.zip
