@@ -1,0 +1,101 @@
+@charset "UTF-8";
+#mainWrapper{
+    width:100vw;
+    height:100vh;
+    font-family:"BIZ UDPGothic";
+}
+.hf{
+    /*width:1920pt;*/
+    width:100vw;
+    background-color:#004499;
+}
+.header{
+    /*height:90pt;*/
+    height:9vh;
+    font-size:1.1em;
+    padding-left:1em;
+    color:white;
+}
+#center{
+    /*width:1800pt;
+    height:880pt;*/
+    height:83vh;
+    display:flex;
+}
+#sidebar{
+    /*width:120pt;
+    height:880px;*/
+    width:4%;
+    /*height:100%;*/
+    padding-top:20px;
+    line-height: 1.8em;
+    background-color:#E1EFFF;
+    text-align:center;
+}
+#main{
+    width:96%;
+    /*margin:10px;*/
+    background-color:whitesmoke;
+}
+#footer{
+    /*height:80pt;*/
+    height:8vh;
+    color:white;
+}
+.middle{
+    display:table-cell;
+    vertical-align:middle;
+}
+/*.textMiddle{
+    display:inline-block;
+    vertical-align:middle;
+    width:90px;
+}*/
+.flex{
+    display:flex;
+}
+
+
+.eventRegisterDevice{
+    height:33%;
+}
+.graphWrapper{
+    height:70%;
+    /*margin-bottom:3px;*/
+}
+.thumbnail{
+    width:200px;
+    margin:3px;
+    /*border:1px solid;*/
+    font-size:20px;
+    text-align:center;
+}
+.parameter{
+    width:200px;
+    margin:3px;
+    /*border:1px solid;*/
+    font-size:12px;
+}
+.graph{
+    width:calc(100% - 430px);
+    margin:3px;
+    /*border:1px solid;*/
+}
+
+#eventTable{
+    width:100%;
+}
+
+#deviceWrapper{
+    /*margin-top:7%;*/
+    /*justify-content:center;*/
+    /*margin-left:30%;*/
+    width:800px;
+    margin:auto;
+}
+#deviceSelector{
+    margin-left:240px;
+}
+#register{
+    margin:20px;
+}
