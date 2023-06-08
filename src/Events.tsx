@@ -13,7 +13,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import CloseIcon from '@mui/icons-material/Close';
 import FilterAltIcon from '@mui/icons-material/FilterAlt'
 
-import * as React from 'react';
+import { useState, MouseEvent } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl'
@@ -63,18 +63,18 @@ const rows = [
   ];
 
 function Events(){
-  const [age, setAge] = React.useState('');
+  const [age, setAge] = useState('');
 
   const handleChange = (event: SelectChangeEvent) => {
     setAge(event.target.value as string);
   };
 
   const popovers = rows.map(() => {
-    return React.useState<HTMLTableRowElement | null>();
+    return useState<HTMLTableRowElement | null>();
   });
 
   const handleClicks = popovers.map((popover) => {
-    return (event: React.MouseEvent<HTMLTableRowElement>) => {popover[1](event.currentTarget);};
+    return (event: MouseEvent<HTMLTableRowElement>) => {popover[1](event.currentTarget);};
   });
 
   const handleCloses = popovers.map((popover) => {

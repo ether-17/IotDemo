@@ -9,7 +9,7 @@ import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import SettingsIcon from '@mui/icons-material/Settings';
 
-import * as React from 'react';
+import { useState, useEffect } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl'
@@ -31,13 +31,13 @@ import {
   } from "recharts";
 
 function Dashboard(){
-    const [age, setAge] = React.useState('');
+    const [age, setAge] = useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
       setAge(event.target.value as string);
     };
 
-    const [data, setData] = React.useState({
+    const [data, setData] = useState({
       eventName: "",
       newEvent: {
           fileHash: "",
@@ -57,7 +57,7 @@ function Dashboard(){
     const test = "{\"test\": \"0\"}";
     console.log(JSON.parse(test));
 
-    React.useEffect(() => {
+    useEffect(() => {
       fetch("https://iot-demo-func.azurewebsites.net/api/GetAllEvent", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
